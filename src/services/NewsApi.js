@@ -1,9 +1,20 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+export const wrangleNews = (json) =>
+  json.map((news) => ({
+    title: news.title,
+    author: news.author,
+    description: news.description,
+  }));
 
-describe('News Container', () => {
-  it('should display a list of news', async () => {
+export const getNews = async () => {
+  const response = await fetch('');
+  const json = await response.json();
 
-  });
-});
+  return wrangleNews(json);
+};
 
+export const getNewsByAuthor = async (newsAuthor) => {
+  const response = await fetch('');
+  const json = await response.json();
+
+  return wrangleNews(json);
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import News from './News';
+import News from './Article';
 
 const NewsList = ({ news }) => (
   <ul aria-label="news">

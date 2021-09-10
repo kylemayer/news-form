@@ -5,17 +5,17 @@ export default class NewsContainer extends Component {
   state = {
     loading: true,
     news: [],
-    newsTitle: '',
+    newsAuthor: '',
   };
 
   render() {
 
-    const { news, newsTitle } = this.state;
+    const { news, newsAuthor } = this.state;
 
     return (
       <>
         <Controls
-          newsTitle={newsTitle}
+          newsAuthor={newsAuthor}
           onTitleChange={this.handleTitleChange}
           onSubmit={this.handleSubmit}
         />
