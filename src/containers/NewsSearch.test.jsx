@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import NewsContainer from './NewsContainer';
+import NewsSearch from './NewsSearch';
 
-describe('News Container', () => {
+describe('News Search Container', () => {
   it('should display a list of news', async () => {
-    render(<NewsContainer />);
+    render(<NewsSearch />);
 
     const input = await screen.findAllByLabelText('Title');
     userEvent.type(input, 'News');

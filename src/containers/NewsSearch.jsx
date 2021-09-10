@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Controls from '../components/news/Controls';
-import NewsList from '../components/news/NewsList';
+import Search from '../components/app/news/Search';
+import ArticleList from '../components/app/news/ArticleList';
 export default class NewsContainer extends Component {
   state = {
     loading: true,
@@ -10,16 +10,16 @@ export default class NewsContainer extends Component {
 
   render() {
 
-    const { news, newsAuthor } = this.state;
+    const { news, newsTitle } = this.state;
 
     return (
       <>
-        <Controls
-          newsAuthor={newsAuthor}
-          onTitleChange={this.handleTitleChange}
+        <Search
+          newsTitle={newsTitle}
+          onAuthorChange={this.handleAuthorChange}
           onSubmit={this.handleSubmit}
         />
-        <NewsList news={news} />
+        <ArticleList news={news} />
       </>
     );
   }

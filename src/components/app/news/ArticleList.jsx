@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import News from './Article';
 
-const NewsList = ({ news }) => (
+const ArticleList = ({ news }) => (
   <ul aria-label="news">
     {news.map(({ title, author, description }) => (
       <li key={author}>
@@ -16,7 +16,7 @@ const NewsList = ({ news }) => (
   </ul>
 );
 
-NewsList.propTypes = {
+ArticleList.propTypes = {
   news: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -26,4 +26,4 @@ NewsList.propTypes = {
   ).isRequired,
 };
 
-export default NewsList;
+export default ArticleList;

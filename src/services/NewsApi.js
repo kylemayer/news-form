@@ -6,15 +6,15 @@ export const wrangleNews = (json) =>
   }));
 
 export const getNews = async () => {
-  const response = await fetch('');
+  const response = await fetch('https://newsapi.org/v2/everything');
   const json = await response.json();
 
   return wrangleNews(json);
 };
 
-export const getNewsByAuthor = async (newsAuthor) => {
-  const response = await fetch('');
-  const json = await response.json();
+// export const getNewsByTitle = async (newsTitle) => {
+//   const response = await fetch('https://newsapi.org/v2/everything/${newTitle}/');
+//   const json = await response.json();
 
-  return wrangleNews(json);
-};
+//   return wrangleNews(json);
+// };
