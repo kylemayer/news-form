@@ -4,7 +4,7 @@ import ArticleList from '../components/app/news/ArticleList';
 import { fetchArticles, fetchArticlesByWord } from '../services/newsApi';
 export default class NewsSearch extends Component {
   state = {
-    loading: true,
+    loading: false,
     articles: [],
     searchWord: '',
   };
@@ -28,7 +28,7 @@ export default class NewsSearch extends Component {
 
   render() {
 
-    const { articles, searchWord, loading } = this.state;
+    const { loading, searchWord, articles  } = this.state;
 
     if(loading) return <p>Loading...</p>;
 
