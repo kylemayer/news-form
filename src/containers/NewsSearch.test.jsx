@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -8,9 +9,9 @@ describe('News Search Container', () => {
     render(<NewsSearch />);
 
     const input = await screen.findAllByLabelText('Title');
-    userEvent.type(input, 'News');
+    userEvent.type(input, 'Dragon');
 
-    const submitBtn = await screen.findByRole('button', { title: 'find-news' });
+    const submitBtn = await screen.findByRole('button', { title: 'find-articles' });
     userEvent.click(submitBtn);
 
 

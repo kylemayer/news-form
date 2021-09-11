@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import News from './Article';
+import Articles from './Article';
 
-const ArticleList = ({ news }) => (
-  <ul aria-label="news">
-    {news.map(({ title, author, description }) => (
-      <li key={author}>
-        <News
+const ArticleList = ({ articles }) => (
+  <ul aria-label="article-list">
+    {articles.map(({ title, author, description }) => (
+      <li key={title}>
+        <Articles
           title={title}
           author={author}
           description={description}
@@ -17,7 +17,7 @@ const ArticleList = ({ news }) => (
 );
 
 ArticleList.propTypes = {
-  news: PropTypes.arrayOf(
+  articles: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,

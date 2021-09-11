@@ -1,25 +1,45 @@
 import React, { Component } from 'react';
 import Search from '../components/app/news/Search';
 import ArticleList from '../components/app/news/ArticleList';
-export default class NewsContainer extends Component {
+import { fetchArticles, fetchArticlesByWord } from '../services/newsApi';
+export default class NewsSearch extends Component {
   state = {
     loading: true,
-    news: [],
-    newsAuthor: '',
+    articles: [],
+    searchWord: '',
+  };
+
+  async componentDidMount() {
+    const articles = await fetchArticles();
+    this.setState({ articles, loading: false });
+  }
+
+  handleSearchChange = (event) => {
+    this.setState({ searchWord: event.target.value });
+  };
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+
+    this.setState({ loading: true });
+    const articles = await fetchArticlesByWord(this.state.searchWord);
+    this.setState({ articles, loading: false });
   };
 
   render() {
 
-    const { news, newsTitle } = this.state;
+    const { articles, searchWord, loading } = this.state;
+
+    if(loading) return <p>Loading...</p>;
 
     return (
       <>
         <Search
-          newsTitle={newsTitle}
-          onAuthorChange={this.handleAuthorChange}
+          searchWord={searchWord}
+          onSearchChange={this.handleSearchChange}
           onSubmit={this.handleSubmit}
         />
-        <ArticleList news={news} />
+        <ArticleList articles={articles} />
       </>
     );
   }
