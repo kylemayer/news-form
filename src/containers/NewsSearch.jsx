@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import Search from '../components/app/news/Search';
 import ArticleList from '../components/app/news/ArticleList';
-import { fetchArticles, fetchArticlesByWord } from '../services/newsApi';
+import { fetchArticlesByWord } from '../services/newsApi';
 export default class NewsSearch extends Component {
   state = {
     loading: false,
     articles: [],
     searchWord: '',
   };
-
-  async componentDidMount() {
-    const articles = await fetchArticles();
-    this.setState({ articles, loading: false });
-  }
 
   handleSearchChange = (event) => {
     this.setState({ searchWord: event.target.value });
