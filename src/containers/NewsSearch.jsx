@@ -30,7 +30,7 @@ export default class NewsSearch extends Component {
 
     const { loading, searchWord, articles  } = this.state;
 
-    if(loading) return <p>Loading...</p>;
+    if(loading) return <h3>Loading...</h3>;
 
     return (
       <>

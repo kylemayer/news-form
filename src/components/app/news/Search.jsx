@@ -4,18 +4,20 @@ import PropTypes from 'prop-types';
 
 const Search = ({ searchWord, onSubmit, onSearchChange }) => (
   <form onSubmit={onSubmit}>
-    <label htmlFor="searchWord">Search</label>
-    <input
-      id="searchWord"
-      type="text"
-      value={searchWord}
-      onChange={onSearchChange}
-    />
+    <label>
+      Search
+      <input
+        type="text"
+        value={searchWord}
+        onChange={onSearchChange}
+        aria-label="search"
+      />
+    </label>
     <button aria-label="find-articles">Submit</button>
   </form>
 );
 
-Search.protoTypes = {
+Search.propTypes = {
   searchWord: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onSearchChange: PropTypes.func.isRequired,

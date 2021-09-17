@@ -2,25 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Article from './Article';
 
-const ArticleList = ({ articles }) => {
-  const articleList = articles.map((article, index) => {
-    return (
-      <li key={index}>
-        <Article {...article} />
+const ArticleList = ({ articles }) => (
+  <ul aria-label="article">
+    {articles.map(({ title, author, description }) => (
+      <li key={`${title}`}>
+        <Article
+          title={title}
+          author={author}
+          description={description}
+        />
       </li>
-    );
-  });
-
-  return <ul>{articleList}</ul>;
-};
+    ))}
+  </ul>
+);
 
 
 ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
+      author: PropTypes.string,
+      description: PropTypes.string
     })
   ).isRequired,
 };

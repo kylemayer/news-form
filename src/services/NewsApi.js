@@ -6,15 +6,16 @@ export const formatArticles = (json) =>
     description: article.description,
   }));
 
+
 export const fetchArticles = async () => {
-  const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=a5bb6384dbe143e49ab13e067894a099');
+  const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_TOKEN}`);
   const json = await response.json();
 
   return formatArticles(json);
 };
 
-export const fetchArticlesByWord = async () => {
-  const response = await fetch('https://newsapi.org/v2/everything?q=bitcoin&apiKey=a5bb6384dbe143e49ab13e067894a099');
+export const fetchArticlesByWord = async (query) => {
+  const response = await fetch(`https://newsapi.org/v2/everything?apiKey=${process.env.NEWS_TOKEN}&qInTitle=${query}`);
   const json = await response.json();
 
   return formatArticles(json);
