@@ -10,7 +10,7 @@ export const fetchArticles = async () => {
 
 export const fetchArticlesByWord = (param) => {
   return fetch(
-    `https://newsapi.org/v2/everything?apiKey=${process.env.NEWS_TOKEN}&qInTitle=${param}`
+    `https://newsapi.org/v2/everything?q=${param}&apiKey=${process.env.NEWS_TOKEN}`
   )
     .then((res) => res.json())
     .then((json) =>
