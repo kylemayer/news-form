@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search file should render an input form and a button 1`] = `
+<input
+  aria-label="search"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`Search file should render an input form and a button 2`] = `
+<button
+  aria-label="find-articles"
+>
+  Submit
+</button>
+`;

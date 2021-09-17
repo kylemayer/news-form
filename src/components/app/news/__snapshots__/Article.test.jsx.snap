@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article file should display an article object 1`] = `
+<h4>
+  title
+</h4>
+`;
+
+exports[`Article file should display an article object 2`] = `
+<p>
+  author
+</p>
+`;
+
+exports[`Article file should display an article object 3`] = `
+<p>
+  description
+</p>
+`;

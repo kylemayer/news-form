@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleList file should display article in a ul 1`] = `
+<ul
+  aria-label="article"
+>
+  <li>
+    <div>
+      <h4>
+        iPhone 13 Release
+      </h4>
+      <p>
+        Sam
+      </p>
+      <p>
+        Five new colors
+      </p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <h4>
+        PS5 on Sale
+      </h4>
+      <p>
+        Sally
+      </p>
+      <p>
+        Sale on Friday
+      </p>
+    </div>
+  </li>
+</ul>
+`;
