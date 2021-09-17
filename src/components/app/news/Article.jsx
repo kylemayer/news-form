@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Article = ({ title, author, description }) => (
   <div>
-    <p>{title}</p>
+    <h4>{title}</h4>
     <p>{author}</p>
     <p>{description}</p>
   </div>
