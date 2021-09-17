@@ -18,7 +18,7 @@ describe('News Search Container', () => {
 
     return waitFor(() => {
       const articles = screen.getAllByText('Bidden', { exact: false });
-      expect(articles.length).toBeGreaterThan(1);
+      expect(articles.length).toBeGreaterThan(2);
     });
   });
 });
