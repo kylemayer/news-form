@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Search from '../components/app/news/Search';
 import ArticleList from '../components/app/news/ArticleList';
-import { fetchArticlesByWord } from '../services/newsApi';
+import { fetchArticlesByWord } from '../services/newsApi.js';
 export default class NewsSearch extends Component {
   state = {
     loading: false,
